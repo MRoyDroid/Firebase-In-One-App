@@ -5,8 +5,12 @@
     <string name="hint_password">Enter Your Password</string>
     <string name="button_text_sign_up">Sign Up</string>
 
+    <string name="success_sign_up">Account Created Successfully</string>
+
+    <string name="error_general">Something Went Wrong</string>
     <string name="error_email">Enter Email</string>
     <string name="error_password">Enter Password</string>
     <string name="error_password_character_limit">Should Contain 8 or more Characters</string>
-    <string name="success_sign_up">Account Created Successfully</string>
+
+    <string name="error_email_already_in_use">Email Already In Use</string>
 </resources>

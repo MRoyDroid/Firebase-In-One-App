@@ -6,5 +6,5 @@ package com.mithuroy.firebaseinoneapp.domain
 
 interface SignUpCallBack {
     fun onSuccess()
-    fun onFailure(errorMessage: String)
+    fun onFailure(errorCode: String)
 }

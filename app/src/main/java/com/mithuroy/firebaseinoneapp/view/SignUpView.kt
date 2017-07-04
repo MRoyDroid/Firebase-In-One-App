@@ -13,6 +13,6 @@ interface SignUpView {
     fun showPasswordError(resourceId: Int)
     fun getFirebaseAuth(): FirebaseAuth
     fun onSignUpSuccess(resourceId: Int)
-    fun onSignUpFailure(errorMessage: String)
+    fun onSignUpFailure(errorMessage: Int)
     fun isLoading()
 }

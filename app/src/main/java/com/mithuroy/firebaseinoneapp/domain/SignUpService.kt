@@ -2,6 +2,7 @@ package com.mithuroy.firebaseinoneapp.domain
 
 import android.app.Activity
 import android.content.Context
+import com.google.firebase.auth.FirebaseAuthException
 import com.mithuroy.firebaseinoneapp.view.SignUpView
 
 
@@ -16,7 +17,8 @@ class SignUpService(val context: Context) {
                     if (task.isSuccessful) {
                         callBack.onSuccess()
                     } else {
-                        callBack.onFailure(task.exception.toString())
+                        val e = task.exception as FirebaseAuthException
+                        callBack.onFailure(e.errorCode)
                     }
                 })
     }

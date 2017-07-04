@@ -11,6 +11,10 @@ import com.mithuroy.firebaseinoneapp.view.SignUpView
 
 class SignUpPresenter(val view: SignUpView, val service: SignUpService) : SignUpCallBack {
 
+    companion object {
+        val PASSWORD_MAX_LIMIT = 8
+    }
+
     fun onSingUpClicked() {
         val emailAddress: String = view.getEmailAddress()
         val password: String = view.getPassword()
@@ -25,7 +29,7 @@ class SignUpPresenter(val view: SignUpView, val service: SignUpService) : SignUp
             return
         }
 
-        if (password.length < 7) {
+        if (password.length < PASSWORD_MAX_LIMIT - 1) {
             view.showPasswordError(R.string.error_password_character_limit)
             return
         }
@@ -39,8 +43,11 @@ class SignUpPresenter(val view: SignUpView, val service: SignUpService) : SignUp
         view.onSignUpSuccess(R.string.success_sign_up)
     }
 
-    override fun onFailure(errorMessage: String) {
-        view.onSignUpFailure("Authentication Failed.\n$errorMessage")
+    override fun onFailure(errorCode: String) {
+        if (errorCode == "ERROR_EMAIL_ALREADY_IN_USE")
+            view.onSignUpFailure(R.string.error_email_already_in_use)
+        else
+            view.onSignUpFailure(R.string.error_general)
     }
 
 }

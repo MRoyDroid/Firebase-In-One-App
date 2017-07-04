@@ -57,8 +57,8 @@ class SignUpActivity : AppCompatActivity(), SignUpView {
         startActivity(intent)
     }
 
-    override fun onSignUpFailure(errorMessage: String) {
-        Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
+    override fun onSignUpFailure(errorMessage: Int) {
+        Toast.makeText(this, getString(errorMessage), Toast.LENGTH_LONG).show()
         btn_sign_up.visibility = View.VISIBLE
         pb_sign_up.visibility = View.GONE
     }
