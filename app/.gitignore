@@ -1,0 +1,13 @@
+/*/build/
+local.properties
+.gradle/
+.signing/
+.idea/
+*.apk
+bin/
+gen/
+out/
+*.log
+*.iml
+*.jks
+google-services.json
