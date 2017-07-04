@@ -6,7 +6,7 @@
     <string name="button_text_sign_up">Sign Up</string>
 
     <string name="error_email">Enter Email</string>
-    <string name="error_password">Enter Email</string>
+    <string name="error_password">Enter Password</string>
     <string name="error_password_character_limit">Should Contain 8 or more Characters</string>
     <string name="success_sign_up">Account Created Successfully</string>
 </resources>
