@@ -12,7 +12,7 @@ import com.mithuroy.firebaseinoneapp.view.SignUpView
 class SignUpPresenter(val view: SignUpView, val service: SignUpService) : SignUpCallBack {
 
     companion object {
-        val PASSWORD_MAX_LIMIT = 8
+        val PASSWORD_MIN_LIMIT = 8
     }
 
     fun onSingUpClicked() {
@@ -29,7 +29,7 @@ class SignUpPresenter(val view: SignUpView, val service: SignUpService) : SignUp
             return
         }
 
-        if (password.length < PASSWORD_MAX_LIMIT - 1) {
+        if (password.length < PASSWORD_MIN_LIMIT - 1) {
             view.showPasswordError(R.string.error_password_character_limit)
             return
         }
