@@ -2,20 +2,20 @@ package com.mithuroy.firebaseinoneapp.peresenter
 
 import com.mithuroy.firebaseinoneapp.R
 import com.mithuroy.firebaseinoneapp.domain.DomainCallback
-import com.mithuroy.firebaseinoneapp.domain.SignUpService
-import com.mithuroy.firebaseinoneapp.view.SignUpView
+import com.mithuroy.firebaseinoneapp.domain.LoginService
+import com.mithuroy.firebaseinoneapp.view.LoginView
 
 /**
- * Created by Mithu on June'26 2017
+ * Created by Mithu on July'04 2017
  */
 
-class SignUpPresenter(val view: SignUpView, val service: SignUpService) : DomainCallback {
+class LoginPresenter(val view: LoginView, val service: LoginService) : DomainCallback {
 
     companion object {
         val PASSWORD_MIN_LIMIT = 8
     }
 
-    fun onSingUpClicked() {
+    fun onLoginClicked() {
         val emailAddress: String = view.getEmailAddress()
         val password: String = view.getPassword()
 
@@ -36,18 +36,14 @@ class SignUpPresenter(val view: SignUpView, val service: SignUpService) : Domain
 
         view.isLoading()
 
-        service.startSignUpProcess(view, this)
+        service.startLoginProcess(view, this)
     }
 
     override fun onSuccess() {
-        view.onSignUpSuccess(R.string.success_sign_up)
+        view.onLoginSuccess(R.string.success_login)
     }
 
     override fun onFailure(errorCode: String) {
-        if (errorCode == "ERROR_EMAIL_ALREADY_IN_USE")
-            view.onSignUpFailure(R.string.error_email_already_in_use)
-        else
-            view.onSignUpFailure(R.string.error_general)
+        view.onLoginFailure(R.string.error_general)
     }
-
 }

@@ -31,6 +31,10 @@ class SignUpActivity : AppCompatActivity(), SignUpView {
         presenter.onSingUpClicked()
     }
 
+    fun onClickLoginText(view: View) {
+        startActivity(Intent(this, LoginActivity::class.java))
+    }
+
     override fun getEmailAddress(): String {
         return et_sign_up_email.text.toString()
     }
