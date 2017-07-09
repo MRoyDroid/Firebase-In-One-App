@@ -25,14 +25,13 @@ class SignUpActivity : AppCompatActivity(), SignUpView {
         setContentView(R.layout.activity_sign_up)
         auth = FirebaseAuth.getInstance()
         presenter = SignUpPresenter(this, SignUpService(this))
+
+        initListeners()
     }
 
-    fun onClickSignUpButton(view: View) {
-        presenter.onSingUpClicked()
-    }
-
-    fun onClickLoginText(view: View) {
-        startActivity(Intent(this, LoginActivity::class.java))
+    private fun initListeners() {
+        btn_sign_up.setOnClickListener { presenter.onSingUpClicked() }
+        txt_sign_up_login.setOnClickListener { startActivity(Intent(this, LoginActivity::class.java)) }
     }
 
     override fun getEmailAddress(): String {

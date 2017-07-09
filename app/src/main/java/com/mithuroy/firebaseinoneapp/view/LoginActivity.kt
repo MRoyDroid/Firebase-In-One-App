@@ -21,10 +21,13 @@ class LoginActivity : AppCompatActivity(), LoginView {
         setContentView(R.layout.activity_login)
         auth = FirebaseAuth.getInstance()
         presenter = LoginPresenter(this, LoginService(this))
+
+        initListeners()
     }
 
-    fun onClickLoginButton(view: View) {
-        presenter.onLoginClicked()
+    fun initListeners() {
+        btn_login.setOnClickListener { presenter.onLoginClicked() }
+        txt_login_forgot_pwd.setOnClickListener { startActivity(Intent(this, ForgotPasswordActivity::class.java)) }
     }
 
     override fun getEmailAddress(): String {

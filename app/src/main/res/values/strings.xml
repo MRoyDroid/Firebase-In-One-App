@@ -9,12 +9,15 @@
 
     <string name="success_sign_up">Account Created Successfully</string>
     <string name="success_login">Logged in Successfully</string>
+    <string name="success_reset_password">Password Reset Successfully</string>
 
     <string name="error_general">Something Went Wrong</string>
     <string name="error_email">Enter Email</string>
     <string name="error_password">Enter Password</string>
     <string name="error_password_character_limit">Should Contain 8 or more Characters</string>
-
     <string name="error_email_already_in_use">Email Already In Use</string>
+
     <string name="text_login_click"><u>Click Here To Login</u></string>
+    <string name="text_forget_password">Forgot Password?</string>
+    <string name="text_reset_password">Reset Password</string>
 </resources>
